@@ -37,21 +37,27 @@ const CountTodosStatus = () => {
         <div className="all-todos-count">
           <div className="up">
             <span className="all-todos-count-title">all</span>
-            <span className="material-symbols-outlined">line_end_arrow_notch</span>
+            <span className="material-symbols-outlined">
+              line_end_arrow_notch
+            </span>
           </div>
           <span className="all-todos-count-value">23</span>
         </div>
         <div className="active-todos-count">
           <div className="up">
             <span className="active-todos-count-title">active</span>
-            <span className="material-symbols-outlined">line_end_arrow_notch</span>
+            <span className="material-symbols-outlined">
+              line_end_arrow_notch
+            </span>
           </div>
           <span className="active-todos-count-value">23</span>
         </div>
         <div className="completed-todos-count">
           <div className="up">
             <span className="completed-todos-count-title">completed</span>
-            <span className="material-symbols-outlined">line_end_arrow_notch</span>
+            <span className="material-symbols-outlined">
+              line_end_arrow_notch
+            </span>
           </div>
           <span className="completed-todos-count-value">23</span>
         </div>
@@ -86,27 +92,29 @@ const FilterTodosByStatus = ({ todosStatus, handleTodosStatusChange }) => {
   return (
     <div className="footer__todoFilterbyStatus">
       <h3 className="footer__todoFilterbyStatus__title">filter by status</h3>
-      <StatusToggle
-        classname={"selectAll"}
-        id={"all"}
-        name={"status"}
-        todosStatus={todosStatus}
-        handleTodosStatusChange={handleTodosStatusChange}
-      />
-      <StatusToggle
-        classname={"selectActive"}
-        id={"active"}
-        name={"status"}
-        todosStatus={todosStatus}
-        handleTodosStatusChange={handleTodosStatusChange}
-      />
-      <StatusToggle
-        classname={"selectCompleted"}
-        id={"completed"}
-        name={"status"}
-        todosStatus={todosStatus}
-        handleTodosStatusChange={handleTodosStatusChange}
-      />
+      <div className="footer__todoFilterbyStatus__toggles">
+        <StatusToggle
+          classname={"selectAll"}
+          id={"all"}
+          name={"status"}
+          todosStatus={todosStatus}
+          handleTodosStatusChange={handleTodosStatusChange}
+        />
+        <StatusToggle
+          classname={"selectActive"}
+          id={"active"}
+          name={"status"}
+          todosStatus={todosStatus}
+          handleTodosStatusChange={handleTodosStatusChange}
+        />
+        <StatusToggle
+          classname={"selectCompleted"}
+          id={"completed"}
+          name={"status"}
+          todosStatus={todosStatus}
+          handleTodosStatusChange={handleTodosStatusChange}
+        />
+      </div>
     </div>
   );
 };
