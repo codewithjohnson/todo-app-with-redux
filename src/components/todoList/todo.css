@@ -1,0 +1,59 @@
+.todo {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.6rem 1.2rem;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.041);
+}
+
+.todo .todo__details {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.todo__details > input[type="checkbox"] {
+  accent-color: rgba(220, 20, 60, 0.726);
+  cursor: pointer;
+  border-radius: 50%;
+}
+
+.todo__details .todo__text {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.795);
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
+
+.todo__tags {
+  padding: 2px 6px;
+  font-size: 8px;
+  font-weight: 200;
+  border-radius: 5px;
+}
+
+.todo_utils {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.todo_utils > span {
+  cursor: pointer;
+  font-size: 20px;
+  opacity: 0.7;
+  color: rgba(0, 0, 0, 0.637);
+}
+
+.todo_utils > span:hover {
+  opacity: 1;
+  color: black;
+}
+
+@media screen and (max-width: 480px) {
+  .todo__details .todo__text {
+    font-size: 13px;
+  }
+}
