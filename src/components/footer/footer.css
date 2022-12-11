@@ -37,6 +37,7 @@ footer .footer__actions button {
   cursor: pointer;
   font-size: 12px;
   font-weight: 500;
+  
 }
 
 footer .footer__actions button:hover {
@@ -123,6 +124,7 @@ footer label:hover {
   /* todos actions */
   footer .footer__actions {
     border-right-color: rgba(220, 20, 60, 0.432);
+    
   }
 
   /* Todos status */
@@ -146,6 +148,12 @@ footer label:hover {
     display: flex;
   }
 
+  .up {
+    display: flex;
+    align-items: center;
+    margin-right: 0rem;
+  }
+  
   .all-todos-count,
   .active-todos-count,
   .completed-todos-count {
