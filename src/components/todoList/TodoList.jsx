@@ -1,11 +1,12 @@
-import React from "react";
+import { memo, useEffect } from "react";
 import "./todoList.css";
 import { useSelector } from "react-redux";
 import Todo from "./Todo";
+import { store } from "../../store";
+
 
 const TodoList = () => {
-  const TODOS = useSelector((store) => store.todos.todos);
-  console.log(TODOS);
+  const TODOS = useSelector((store) => store.todos);
 
   return (
     <div className="todoList">
@@ -18,4 +19,6 @@ const TodoList = () => {
   );
 };
 
-export default TodoList;
+const MemoizedTodoList = memo(TodoList);
+
+export default MemoizedTodoList;

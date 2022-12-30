@@ -1,18 +1,42 @@
-import { useEffect, useState } from "react";
-import { useSelector } from "react-redux";
+import { useState } from "react";
+import { useDispatch } from "react-redux";
 import "./App.css";
-import Header from "./components/header/Header";
+import MemoizedHeader from "./components/header/Header";
 import InputBox from "./components/inputBox/InputBox";
-import Footer from "./components/footer/Footer";
-import TodoList from "./components/todoList/TodoList";
+import MemoizedFooter from "./components/footer/Footer";
+import MemoizedTodoList from "./components/todoList/TodoList";
 
 const App = () => {
+  const [input, setInput] = useState({ inputValue: "", inputTag: "personal" });
+  const dispatch = useDispatch();
+
+  const HandleInputChange = (e) => {
+    setInput({ ...input, inputValue: e.target.value });
+  };
+
+  const HandleTagChange = (e) => {
+    setInput({ ...input, inputTag: e.target.value });
+  };
+
+  // HAndle add todo
+  const handleAddTodo = (e) => {
+    if (e.key === "Enter") {
+      console.log(input);
+      dispatch({ type: "TODO/Added", payload: input });
+    }
+  };
+
   return (
     <div className="app">
-      <Header />
-      <InputBox />
-      <TodoList />
-      <Footer />
+      <MemoizedHeader />
+      <InputBox
+        input={input}
+        HandleInputChange={HandleInputChange}
+        HandleTagChange={HandleTagChange}
+        handleAddTodo={handleAddTodo}
+      />
+      <MemoizedTodoList />
+      <MemoizedFooter />
     </div>
   );
 };

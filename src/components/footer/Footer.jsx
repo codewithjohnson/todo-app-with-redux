@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, memo } from "react";
 import "./footer.css";
 
 const Footer = () => {
@@ -119,4 +119,6 @@ const FilterTodosByStatus = ({ todosStatus, handleTodosStatusChange }) => {
   );
 };
 
-export default Footer;
+const MemoizedFooter = memo(Footer);
+
+export default MemoizedFooter;

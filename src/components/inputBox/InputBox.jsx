@@ -2,19 +2,26 @@ import { useState } from "react";
 import "./inputBox.css";
 import { todoTags } from "../../utilities/todoTags";
 
-const InputBox = () => {
-  const [todoTag, setTodoTag] = useState("personal");
-  const HandleTagChange = (e) => {
-    setTodoTag(e.target.value);
-  };
 
+const InputBox = ({
+  input,
+  HandleInputChange,
+  HandleTagChange,
+  handleAddTodo,
+}) => {
   return (
     <div className="inputContainer">
-      <input type="text" placeholder="Enter your task here..." />
+      <input
+        type="text"
+        placeholder="Enter your task here..."
+        value={input.inputValue}
+        onChange={HandleInputChange}
+        onKeyDown={handleAddTodo}
+      />
       <select
         name="todoTags"
         id="todoTags"
-        value={todoTag}
+        value={input.inputTag}
         onChange={HandleTagChange}
       >
         {todoTags.map((todoTag, index) => {
